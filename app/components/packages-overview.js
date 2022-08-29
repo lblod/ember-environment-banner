@@ -1,1 +1,1 @@
-export { default } from 'ember-environment-banner/components/packages-overview';
+export { default } from '@lblod/ember-environment-banner/components/packages-overview';
