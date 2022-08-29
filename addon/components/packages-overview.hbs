@@ -1,5 +1,6 @@
+{{#unless (object-is-empty this.packages)}}
 <AuButton @skin='link-secondary' @icon="info-circle" @iconAlignment="left" onclick={{this.toggleModal}}>
-  Package versions
+  Editor Package versions
 </AuButton>
 <AuModal
   @modalOpen={{this.showModal}}
@@ -33,3 +34,4 @@
     </AuTable>
   </Modal.Body>
 </AuModal>
+{{/unless}}
