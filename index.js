@@ -24,14 +24,8 @@ function extractRepoUrl(pjson) {
   }
 }
 function getPackages(projectPath) {
-  const mainPjson = require(path.join(projectPath, 'package.json'));
-  const packages = {
-    [mainPjson.name]: {
-      version: mainPjson.version,
-      url: extractRepoUrl(mainPjson),
-    },
-  };
-  try {
+  const packages = {};
+  if (fs.existsSync(path.join(projectPath, 'node_modules/@lblod'))) {
     const dirs = fs
       .readdirSync(path.join(projectPath, 'node_modules/@lblod'))
       .filter((dir) => dir.startsWith('ember-rdfa-editor'));
@@ -46,8 +40,6 @@ function getPackages(projectPath) {
         url: extractRepoUrl(pjson),
       };
     });
-  } catch (e) {
-    console.error(e);
   }
   return packages;
 }
