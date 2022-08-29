@@ -6,9 +6,11 @@
     </p>
     <div class="au-u-flex au-u-flex--spaced-small">
       <p>
-        {{@applicationName}} {{app-version showExtended=true}}
+        {{@applicationName}} {{app-version versionOnly=true showExtended=true}}
       </p>
+      {{#unless @disablePackagesOverview}}
       <PackagesOverview/>
+      {{/unless}}
     </div>
   </div>
 </AuAlert>
