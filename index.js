@@ -54,6 +54,9 @@ function getPackages(projectPath) {
 
 module.exports = {
   name: require('./package').name,
+  included: function (/* app */) {
+    this._super.included.apply(this, arguments);
+  },
   config(_env, baseConfig) {
     let config = this._super.config.apply(this, arguments);
 
