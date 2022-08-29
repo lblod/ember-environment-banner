@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { getOwner } from '@ember/application';
-export default class BannerComponent extends Component {
+export default class EnvironmentBannerComponent extends Component {
   get environment() {
     return getOwner(this).resolveRegistration('config:environment');
   }
