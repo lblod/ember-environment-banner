@@ -1,16 +1,29 @@
-<AuAlert @size="tiny" @skin="warning" class="au-u-margin-bottom-none">
-  <div class="au-u-flex au-u-flex--spaced au-u-flex--between">
-    <p class="au-u-medium">
+<AuAlert @size='tiny' @skin='warning' class='au-u-margin-bottom-none'>
+  <div class='au-u-flex au-u-flex--spaced au-u-flex--between'>
+    <p class='au-u-medium'>
       Environment:
       {{@environmentName}}
     </p>
-    <div class="au-u-flex au-u-flex--spaced-small">
+    <div class='au-u-flex au-u-flex--spaced-small'>
       <p>
-        {{@applicationName}} {{app-version versionOnly=true showExtended=true}}
+        {{@applicationName}}
+        {{app-version versionOnly=true showExtended=true}}
       </p>
-      {{#unless @disablePackagesOverview}}
-      <PackagesOverview/>
-      {{/unless}}
+      {{#if this.showPackages}}
+        <AuButton
+          @skin='link-secondary'
+          @icon='info-circle'
+          @iconAlignment='left'
+          onclick={{this.toggleModal}}
+        >
+          Editor Package versions
+        </AuButton>
+        <PackagesOverview
+          @showModal={{this.showModal}}
+          @toggleModal={{this.toggleModal}}
+          @packages={{this.packages}}
+        />
+      {{/if}}
     </div>
   </div>
 </AuAlert>

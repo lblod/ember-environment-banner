@@ -1,9 +1,6 @@
-<AuButton @skin='link-secondary' @icon="info-circle" @iconAlignment="left" onclick={{this.toggleModal}}>
-  Editor Package versions
-</AuButton>
 <AuModal
-  @modalOpen={{this.showModal}}
-  @closeModal={{this.toggleModal}}
+  @modalOpen={{@showModal}}
+  @closeModal={{@toggleModal}}
   @title='Package versions'
   as |Modal|
 >
@@ -16,13 +13,13 @@
         </tr>
       </:header>
       <:body>
-        {{#each-in this.packages as |key value|}}
+        {{#each-in @packages as |key value|}}
           <tr>
             <td>
               {{#if value.url}}
               <AuLinkExternal href={{value.url}}>{{key}}</AuLinkExternal>
               {{else}}
-              {{key}}
+              {{key}}d
               {{/if}}
             </td>
             <td>{{value.version}}</td>
