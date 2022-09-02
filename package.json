@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^7.26.6",
+    "ember-cli-dependency-lint": "^2.0.1",
     "ember-cli-htmlbars": "^5.7.1"
   },
   "devDependencies": {
@@ -90,5 +91,8 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "volta": {
+    "node": "16.17.0"
   }
 }

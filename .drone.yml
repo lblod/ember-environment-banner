@@ -1,0 +1,47 @@
+---
+kind: pipeline
+type: docker
+name: test
+steps:
+- name: install
+  image: danlynn/ember-cli:3.28.5
+  commands:
+  - npm ci
+- name: lint:js
+  image: danlynn/ember-cli:3.28.5
+  commands:
+  - npm run lint:js
+- name: lint:hbs
+  image: danlynn/ember-cli:3.28.5
+  commands:
+  - npm run lint:hbs
+- name: lint:dependencies
+  image: danlynn/ember-cli:3.28.5
+  failure: ignore
+  commands:
+  - ember dependency-lint
+- name: test
+  image: danlynn/ember-cli:3.28.5
+  commands:
+  - npm run test:ember
+trigger:
+  event:
+    - pull_request
+---
+kind: pipeline
+type: docker
+name: release
+steps:
+- name: npm-release
+  image: plugins/npm
+  settings:
+    access: public
+    token:
+      from_secret: npm_access_token
+trigger:
+  event:
+    - tag
+---
+kind: secret
+name: npm_access_token
+data: 6PKJHnwu1zQGAbj8kNkbwF04jnMXnj995864SfQc040UR2ivq80OhgHkucpeULzZ6wWt8r1p48QFVNFqReDl6y+SeRM=
