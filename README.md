@@ -39,6 +39,7 @@ The banner automatically extracts the installed version of the installed applica
 If any @lblod/ember-rdfa-editor packages are installed (the editor itself or plugins), the banner also extracts their versions and displays them in a modal.
 
 Future work could include providing a custom package path to the banner so it not solely extracts versions for the @lblod/ember-rdfa-editor packages.
+
 License
 ------------------------------------------------------------------------------
 
