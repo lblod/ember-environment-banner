@@ -1,6 +1,6 @@
 {
   "name": "@lblod/ember-environment-banner",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -34,7 +34,6 @@
     "ember-cli-dependency-lint": "^2.0.1",
     "ember-cli-htmlbars": "^5.7.1"
   },
-  
   "devDependencies": {
     "@appuniversum/ember-appuniversum": "^1.4.1",
     "@codemirror/basic-setup": "^0.20.0",
