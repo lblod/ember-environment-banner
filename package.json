@@ -85,7 +85,7 @@
     "xml-formatter": "^2.6.1"
   },
   "peerDependencies": {
-    "@appuniversum/ember-appuniversum": "1.4.1"
+    "@appuniversum/ember-appuniversum": "^1.4.1"
   },
   "engines": {
     "node": ">= 16"
