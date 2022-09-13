@@ -88,7 +88,7 @@
     "@appuniversum/ember-appuniversum": "1.4.1"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": ">= 16"
   },
   "ember": {
     "edition": "octane"
