@@ -27,7 +27,9 @@ export default class EnvironmentBannerComponent extends Component {
     if (environment.environmentName === 'test') {
       thisEnvironmentValue = 'testomgeving'
     } else if (environment.environmentName === 'development') {
-      thisEnvironmentValue = isLocalhost ? 'lokale omgeving' : 'ontwikkelomgeving'
+      thisEnvironmentValue = 'ontwikkelomgeving'
+    } else if (environment.environmentName === 'local') {
+      thisEnvironmentValue = 'lokale omgeving'
     } else {
       /**/
     }
