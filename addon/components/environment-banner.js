@@ -18,20 +18,19 @@ export default class EnvironmentBannerComponent extends Component {
   get environmentName() {
     const thisEnvironmentValue = isLocalhost
     ? 'local'
-    : environment.environmentName;
+    : this.environment.environmentName;
 
     return thisEnvironmentValue;
   }
 
   get environmentTitle() {
-    if (environment.environmentName === 'test') {
+    if (this.environment.environmentName === 'test') {
       thisEnvironmentValue = 'testomgeving'
-    } else if (environment.environmentName === 'development') {
+    } else if (this.environment.environmentName === 'development') {
       thisEnvironmentValue = isLocalhost ? 'lokale omgeving' : 'ontwikkelomgeving'
     } else {
       /**/
     }
-
     return thisEnvironmentValue
   }
 
