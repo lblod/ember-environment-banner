@@ -16,21 +16,23 @@ export default class EnvironmentBannerComponent extends Component {
   }
 
   get environmentName() {
-    const thisEnvironmentValues = isLocalhost
+    const thisEnvironmentValue = isLocalhost
     ? 'local'
     : environment.environmentName;
 
-    return thisEnvironmentValues;
+    return thisEnvironmentValue;
   }
 
   get environmentTitle() {
     if (environment.environmentName === 'test') {
-      return thisEnvironmentValues = 'testomgeving'
+      thisEnvironmentValue = 'testomgeving'
     } else if (environment.environmentName === 'development') {
-      return thisEnvironmentValues = isLocalhost ? 'lokale omgeving' : 'ontwikkelomgeving'
+      thisEnvironmentValue = isLocalhost ? 'lokale omgeving' : 'ontwikkelomgeving'
     } else {
-      return null
+      /**/
     }
+
+    return thisEnvironmentValue
   }
 
   get packages() {
