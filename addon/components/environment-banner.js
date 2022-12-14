@@ -18,8 +18,7 @@ export default class EnvironmentBannerComponent extends Component {
   get environmentName() {
     const thisEnvironmentValues = isLocalhost
     ? 'local'
-    : getOwner(this).resolveRegistration('config:environment')
-        .environmentName;
+    : environment.environmentName;
 
     return thisEnvironmentValues;
   }
