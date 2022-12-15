@@ -15,25 +15,6 @@ export default class EnvironmentBannerComponent extends Component {
     return getOwner(this).resolveRegistration('config:environment');
   }
 
-  get environmentName() {
-    const thisEnvironmentValue = isLocalhost
-    ? 'local'
-    : this.environment.environmentName;
-
-    return thisEnvironmentValue;
-  }
-
-  get environmentTitle() {
-    if (this.environment.environmentName === 'test') {
-      thisEnvironmentValue = 'testomgeving'
-    } else if (this.environment.environmentName === 'development') {
-      thisEnvironmentValue = isLocalhost ? 'lokale omgeving' : 'ontwikkelomgeving'
-    } else {
-      /**/
-    }
-    return thisEnvironmentValue
-  }
-
   get packages() {
     return this.environment.APP.packages;
   }
