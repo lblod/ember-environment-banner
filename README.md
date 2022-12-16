@@ -24,16 +24,15 @@ ember install ember-environment-banner
 Usage
 ------------------------------------------------------------------------------
 
-You can add an instance of the environment banner to your page like so:
+You can add an instance of the environment banner to your page this way:
 ```hbs
 <EnvironmentBanner
-  @applicationName='Ember Environment Banner'
-  @environmentName='Dummy'
+  @applicationUrl='https://example.com'
 />
 ```
-The component expects two arguments:
-- The application name which should be displayed in the banner.
-- The environment name which should be displayed in the banner.
+The component expects one argument - `@applicationUrl` - which is the url of the application.
+
+The component extracts the values for `appName`, and `environment` from the _environment.js_ file.
 
 The banner automatically extracts the installed version of the installed application and displays it.
 If any @lblod/ember-rdfa-editor packages are installed (the editor itself or plugins), the banner also extracts their versions and displays them in a modal.
