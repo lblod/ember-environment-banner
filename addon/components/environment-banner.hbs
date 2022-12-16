@@ -1,22 +1,22 @@
-<AuAlert @size='tiny' @skin='warning' class='au-u-margin-bottom-none'>
+<AuAlert @size='tiny' @skin={{this.environmentValues.skin}} class='au-u-margin-bottom-none'>
   <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-flex--start'>
     <p class='au-u-flex au-u-medium au-u-1-5@medium au-u-flex--vertical-center'>
-      Environment: {{@environmentName}}
+      Environment: {{this.environmentValues.env}}
     </p>
     <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-4-5@medium au-u-flex--between'>
       <p class='au-u-4-5@medium'>
-        Dit is de <strong>{{@environmentTitle}}</strong> van het {{@applicationName}} met fictieve en testgegevens.
+        Dit is de <strong>{{this.environmentValues.title}}</strong> van het {{this.applicationName}} met fictieve en testgegevens.
         De productieomgeving met de echte data vind je op 
         <a 
-          rel="tag" target="_blank"
-          title={{@applicationName}} 
+          rel="tag noopener noreferrer" target="_blank"
+          title={{this.applicationName}}
           href={{@applicationUrl}}
         >
           {{@applicationUrl}}
         </a>.
       </p>
       <p class='au-u-flex au-u-flex--vertical-center'>
-        {{@applicationName}}
+        {{this.applicationName}}
         {{app-version versionOnly=true showExtended=true}}
       </p>
       {{#if this.showPackages}}
