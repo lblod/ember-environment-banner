@@ -47,8 +47,7 @@ function getPackages(projectPath) {
 module.exports = {
   name: require('./package').name,
 
-  included: function (app) {
-    app.import('vendor/app.css');
+  included: function (/* app */) {
     this._super.included.apply(this, arguments);
   },
   config(_env, baseConfig) {

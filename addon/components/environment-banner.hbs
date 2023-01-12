@@ -1,20 +1,14 @@
-<AuAlert @size='tiny' @skin={{this.environmentValues.skin}} class='au-u-margin-bottom-none'>
+<AuAlert @size='tiny' @skin={{this.environmentSkin}} class='au-u-margin-bottom-none'>
   <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-flex--start'>
     <p class='au-u-flex au-u-medium au-u-1-5@medium au-u-flex--vertical-center'>
-      Environment: {{this.environmentValues.env}}
+      Environment: {{@environmentName}}
     </p>
     <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-4-5@medium au-u-flex--between'>
-      <p class='au-u-4-5@medium'>
-        Dit is de <strong>{{this.environmentValues.title}}</strong> van het {{this.applicationName}} met fictieve en testgegevens.
-        De productieomgeving met de echte data vind je op 
-        <a 
-          rel="tag noopener noreferrer" target="_blank"
-          title={{this.applicationName}}
-          href={{@applicationUrl}}
-        >
-          {{@applicationUrl}}
-        </a>.
-      </p>
+      {{#if @message}}
+        <p class={{if this.showPackages 'au-u-3-5@medium' 'au-u-4-5@medium'}}>
+          {{{@message}}}
+        </p>    
+      {{/if}}
       <p class='au-u-flex au-u-flex--vertical-center'>
         {{this.applicationName}}
         {{app-version versionOnly=true showExtended=true}}

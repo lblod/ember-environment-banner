@@ -5,7 +5,6 @@ import { tracked } from '@glimmer/tracking';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
-    // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]'
 );
 
@@ -17,42 +16,21 @@ export default class EnvironmentBannerComponent extends Component {
     return getOwner(this).resolveRegistration('config:environment');
   }
   
-  get environmentValues() {
-    let value;
-    let values = isLocalhost
-      ? 'local'
-      : this.environment.environmentName;
-    switch (values) {
+  get environmentSkin() {
+    let env = this.environment.environment;
+    switch (env) {
       case 'test':
-        return value = {
-          env: 'test',
-          title: 'tesstomgeving',
-          skin: 'warning'
-        }
+        return  'warning'
       case 'development':
-        return value = {
-          env: 'development',
-          title: 'ontwikkelomgeving',
-          skin: 'success'
-        }
-      case 'local':
-        return value = {
-          env: 'local',
-          title: 'lokale omgeving',
-          skin: 'error'
+        if (isLocalhost) {
+          return 'error'
+        } else {
+          return 'success'
         }
       default:
-        return value = {
-          env: '',
-          title: '',
-          skin: 'muted'
-        }
+        return 'muted'
     }
-  }
-  
-  get applicationName() {
-    return this.environment.appName;
-  }
+  } 
 
   get packages() {
     return this.environment.APP.packages;
