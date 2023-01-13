@@ -15,22 +15,22 @@ export default class EnvironmentBannerComponent extends Component {
   get environment() {
     return getOwner(this).resolveRegistration('config:environment');
   }
-  
+
   get environmentSkin() {
     let env = this.environment.environment;
     switch (env) {
       case 'test':
-        return  'warning'
+        return 'warning';
       case 'development':
         if (isLocalhost) {
-          return 'error'
+          return 'error';
         } else {
-          return 'success'
+          return 'success';
         }
       default:
-        return 'muted'
+        return 'muted';
     }
-  } 
+  }
 
   get packages() {
     return this.environment.APP.packages;
