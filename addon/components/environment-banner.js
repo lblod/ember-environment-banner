@@ -16,22 +16,6 @@ export default class EnvironmentBannerComponent extends Component {
     return getOwner(this).resolveRegistration('config:environment');
   }
 
-  get environmentSkin() {
-    let env = this.environment.environment;
-    switch (env) {
-      case 'test':
-        return 'warning';
-      case 'development':
-        if (isLocalhost) {
-          return 'error';
-        } else {
-          return 'success';
-        }
-      default:
-        return 'muted';
-    }
-  }
-
   get packages() {
     return this.environment.APP.packages;
   }
