@@ -6,7 +6,7 @@
     <div class='au-u-flex au-u-flex--spaced-large au-u-flex--center'>
       {{#if @message}}
         <p class={{if this.showPackages 'au-u-3-5@medium' 'au-u-4-5@medium'}}>
-          {{{@message}}}
+          {{text-format @message}}
         </p>
       {{/if}}
       <p class='au-u-flex au-u-flex--vertical-center'>
