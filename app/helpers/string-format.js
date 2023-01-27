@@ -1,7 +1,1 @@
-import { helper } from '@ember/component/helper';
-import { htmlSafe } from '@ember/template';
-
-export default helper(function StringFormat([string]) {
-    if(!string) return '';
-    return htmlSafe(string);
-});
+export { default } from '@lblod/ember-environment-banner/helpers/string-format';
