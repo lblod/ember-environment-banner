@@ -1,13 +1,13 @@
 <AuAlert @size='tiny' @skin={{if @skin @skin 'warning'}} class='au-u-margin-bottom-none'>
-  <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-flex--start'>
+  <div class='au-u-flex au-u-flex--spaced au-u-flex--between'>
     <p class='au-u-flex au-u-medium au-u-1-5@medium au-u-flex--vertical-center'>
       Environment: {{@environmentName}}
     </p>
-    <div class='au-u-flex au-u-flex--column au-u-flex--spaced-tiny au-u-4-5@medium au-u-flex--between'>
+    <div class='au-u-flex au-u-flex--spaced-large au-u-flex--center'>
       {{#if @message}}
         <p class={{if this.showPackages 'au-u-3-5@medium' 'au-u-4-5@medium'}}>
           {{{@message}}}
-        </p>    
+        </p>
       {{/if}}
       <p class='au-u-flex au-u-flex--vertical-center'>
         {{@applicationName}}
