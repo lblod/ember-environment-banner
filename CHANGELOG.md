@@ -1,4 +1,10 @@
+## 0.1.3 (2023-01-30)
 
+#### :rocket: Enhancement
+* [#7](https://github.com/lblod/ember-environment-banner/pull/7) Add customizable skin and message to the banner ([@iurianu](https://github.com/iurianu))
+
+#### Committers: 1
+- Iulian Andriescu ([@iurianu](https://github.com/iurianu))
 
 ## 0.1.2 (2022-09-13)
 
