@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { getOwner } from '@ember/application';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+
 export default class EnvironmentBannerComponent extends Component {
   @tracked
   showModal = false;
