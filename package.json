@@ -35,7 +35,7 @@
     "ember-cli-htmlbars": "^5.7.1"
   },
   "devDependencies": {
-    "@appuniversum/ember-appuniversum": "^1.4.1",
+    "@appuniversum/ember-appuniversum": "^2.0.0",
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/lang-html": "^6.1.0",
     "@codemirror/lang-xml": "^6.0.0",
@@ -44,8 +44,8 @@
     "@embroider/test-setup": "^0.43.5",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "@lblod/ember-rdfa-editor": "^0.61.1",
-    "@lblod/ember-rdfa-editor-besluit-plugin": "^0.4.0",
+    "@lblod/ember-rdfa-editor": "^3.2.0",
+    "@lblod/ember-rdfa-editor-lblod-plugins": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.2",
@@ -84,7 +84,7 @@
     "xml-formatter": "^2.6.1"
   },
   "peerDependencies": {
-    "@appuniversum/ember-appuniversum": "^1.4.1"
+    "@appuniversum/ember-appuniversum": "^2.0.0"
   },
   "engines": {
     "node": ">= 16"
@@ -96,6 +96,6 @@
     "configPath": "tests/dummy/config"
   },
   "volta": {
-    "node": "16.17.0"
+    "node": "18.14.2"
   }
 }
