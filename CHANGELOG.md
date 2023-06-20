@@ -1,4 +1,17 @@
 
+
+## 0.3.0 (2023-06-20)
+
+#### :house: Internal
+* [#13](https://github.com/lblod/ember-environment-banner/pull/13) Upgrade to ember 4.12 ([@elpoelma](https://github.com/elpoelma))
+* [#10](https://github.com/lblod/ember-environment-banner/pull/10) Add ember-scenarios woodpecker pipeline ([@elpoelma](https://github.com/elpoelma))
+* [#12](https://github.com/lblod/ember-environment-banner/pull/12) Update `@lblod/ember-rdfa-editor` to 3.8.1 ([@elpoelma](https://github.com/elpoelma))
+* [#11](https://github.com/lblod/ember-environment-banner/pull/11) Remove editor plugins dependency ([@elpoelma](https://github.com/elpoelma))
+* [#9](https://github.com/lblod/ember-environment-banner/pull/9) Replace drone by woodpecker CI ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 0.2.0 (2023-02-27)
 
 #### :house: Internal
