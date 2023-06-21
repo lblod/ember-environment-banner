@@ -35,10 +35,20 @@ The component expects two, and accepts three arguments:
 * `@message` - a string that can be written in the _application.hbs_ file, or can be configured in the application controller (optional).
 * `@skin` - a skin that can be added as a string (skin name) in the _application.hbs_ file, or can be configured in the application controller (optional).
 
-The banner automatically extracts the installed version of the installed application and displays it.
-If any @lblod/ember-rdfa-editor packages are installed (the editor itself or plugins), the banner also extracts their versions and displays them in a modal.
+The banner automatically extracts the version of the host app and displays it.
+Additionally, the banner can also display installed packages and their versions through a modal.
+You can configure which packages are shown by providing a list of glob patterns to the addon. The addon can be configure in the `config/environment.js` file of your host app.
 
-Future work could include providing a custom package path to the banner so it not solely extracts versions for the @lblod/ember-rdfa-editor packages.
+Example of such a configuration:
+```js
+'@lblod/ember-environment-banner': {
+      paths: ['ember*'],
+},
+```
+The above example config will allow the addon to pick up packages that start with `ember`.
+
+By default, the environment-banner displays the  `@lblod/ember-rdfa-editor` packages.
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
