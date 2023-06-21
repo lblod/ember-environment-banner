@@ -1,7 +1,9 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
+// eslint-disable-next-line n/no-extraneous-require
+const { GlobSync } = require('glob');
+
 function isUrl(string) {
   try {
     const url = new URL(string);
@@ -23,24 +25,21 @@ function extractRepoUrl(pjson) {
     return url;
   }
 }
-function getPackages(projectPath) {
+function getPackages(basePath, paths = ['@lblod/ember-rdfa-editor*']) {
   const packages = {};
-  if (fs.existsSync(path.join(projectPath, 'node_modules/@lblod'))) {
-    const dirs = fs
-      .readdirSync(path.join(projectPath, 'node_modules/@lblod'))
-      .filter((dir) => dir.startsWith('ember-rdfa-editor'));
-    dirs.forEach((dir) => {
-      const file = path.join(
-        projectPath,
-        `node_modules/@lblod/${dir}/package.json`
-      );
+  paths.forEach((p) => {
+    const g = new GlobSync(
+      path.join(basePath, 'node_modules', p, 'package.json')
+    );
+    const files = g.found;
+    files.forEach((file) => {
       const pjson = require(file);
       packages[pjson.name] = {
         version: pjson.version,
         url: extractRepoUrl(pjson),
       };
     });
-  }
+  });
   return packages;
 }
 
@@ -55,9 +54,10 @@ module.exports = {
     if (!baseConfig.APP) {
       return config;
     }
-
-    baseConfig.APP.packages = getPackages(this.project.root);
-
+    baseConfig.APP.packages = getPackages(
+      this.project.root,
+      baseConfig[this.name]?.paths
+    );
     return config;
   },
 };
