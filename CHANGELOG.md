@@ -1,5 +1,17 @@
 
 
+
+## 0.4.0 (2023-06-21)
+
+#### :rocket: Enhancement
+* [#14](https://github.com/lblod/ember-environment-banner/pull/14) Add support for configuring which packages the environment banner picks up ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#15](https://github.com/lblod/ember-environment-banner/pull/15) Remove `@lblod/ember-rdfa-editor` dependency ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 0.3.0 (2023-06-20)
 
 #### :house: Internal
