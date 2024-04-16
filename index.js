@@ -45,13 +45,8 @@ function getPackages(basePath, paths = ['@lblod/ember-rdfa-editor*']) {
 
 module.exports = {
   name: require('./package').name,
-  included: function (app) {
+  included: function (/* app */) {
     this._super.included.apply(this, arguments);
-
-    app.options.sassOptions = app.options.sassOptions || {};
-    app.options.sassOptions.includePaths =
-      app.options.sassOptions.includePaths || [];
-    app.options.sassOptions.includePaths.push('node_modules');
   },
   config(_env, baseConfig) {
     let config = this._super.config.apply(this, arguments);
