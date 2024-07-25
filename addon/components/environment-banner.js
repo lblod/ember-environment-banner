@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { getOwner } from '@ember/application';
+import { helper } from '@ember/component/helper';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { dependencySatisfies, macroCondition } from '@embroider/macros';
@@ -11,8 +12,13 @@ const InfoCircleIcon = macroCondition(
       .InfoCircleIcon
   : 'info-circle';
 
+const or = helper(function ([a, b]) {
+  return a || b;
+});
+
 export default class EnvironmentBannerComponent extends Component {
   InfoCircleIcon = InfoCircleIcon;
+  or = or;
 
   @tracked
   showModal = false;
