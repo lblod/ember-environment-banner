@@ -1,4 +1,4 @@
-<AuAlert @size='tiny' @skin={{if @skin @skin 'warning'}} class='au-u-margin-bottom-none'>
+<AuAlert @size='tiny' @skin={{if @skin @skin 'warning'}} class='au-u-margin-bottom-none' @closable={{@closable}}>
   <div class='au-u-flex au-u-flex--spaced au-u-flex--between'>
     <p class='au-u-flex au-u-medium au-u-1-5@medium au-u-flex--vertical-center'>
       Environment: {{@environmentName}}
