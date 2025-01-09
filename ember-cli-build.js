@@ -8,9 +8,7 @@ module.exports = function (defaults) {
       disableWormholeElement: true,
     },
     sassOptions: {
-      // The docs say "node_modules/@appuniversum/ember-appuniversum" should work, but it fails for
-      // some reason...
-      includePaths: ['node_modules'],
+      includePaths: ['node_modules/@appuniversum'],
     },
     // Add options here
   });
