@@ -2,6 +2,16 @@
 
 
 
+
+## 0.6.0 (2025-01-09)
+
+#### :rocket: Enhancement
+* [#73](https://github.com/lblod/ember-environment-banner/pull/73) Add support for ember-source v5 ([@Windvis](https://github.com/Windvis))
+* [#70](https://github.com/lblod/ember-environment-banner/pull/70) Add a `@closable` argument ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## 0.5.0 (2024-04-18)
 
 #### :rocket: Enhancement
