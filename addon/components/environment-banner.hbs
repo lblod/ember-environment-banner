@@ -4,9 +4,13 @@
       Environment: {{@environmentName}}
     </p>
     <div class='au-u-flex au-u-flex--spaced-large au-u-flex--center'>
-      {{#if @message}}
+      {{#if (this.or @message (has-block "message"))}}
         <p class={{if this.showPackages 'au-u-3-5@medium' 'au-u-4-5@medium'}}>
-          {{string-format @message}}
+          {{#if @message}}
+            {{string-format @message}}
+          {{else}}
+            {{yield to="message"}}
+          {{/if}}
         </p>
       {{/if}}
       <p class='au-u-flex au-u-flex--vertical-center'>
